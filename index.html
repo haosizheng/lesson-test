@@ -36,6 +36,9 @@
         <input type="number" id="modInput" placeholder="输入数字计算余数">
         <button onclick="calculateRemainder()">计算余数</button>
     </div>
+    <div>
+        <button onclick="generateRandomNumber()">生成随机数字</button>
+    </div>
     <div id="result"></div>
 
     <script>
@@ -67,6 +70,13 @@
                 resultDiv.textContent = `${number} 除以 2 的余数是 ${remainder}`;
                 resultDiv.style.color = '#333';
             }
+        }
+
+        function generateRandomNumber() {
+            const randomNumber = Math.floor(Math.random() * 100); // 生成0到99之间的随机整数
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `生成的随机数字是 ${randomNumber}`;
+            resultDiv.style.color = '#333';
         }
     </script>
 </body>
