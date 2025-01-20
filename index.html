@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor 好啊！</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 2rem;
+        }
+        input, button {
+            font-size: 1.5rem;
+            margin: 10px;
+            padding: 5px;
+        }
+        #result {
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div>cursor好啊！</div>
+    <div>
+        <input type="number" id="numberInput" placeholder="输入数字">
+        <button onclick="calculateSquare()">计算平方</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        function calculateSquare() {
+            const input = document.getElementById('numberInput');
+            const resultDiv = document.getElementById('result');
+            const number = parseFloat(input.value);
+            
+            if (isNaN(number)) {
+                resultDiv.textContent = '请输入有效的数字';
+                resultDiv.style.color = 'red';
+            } else {
+                const square = number * number;
+                resultDiv.textContent = `${number} 的平方是 ${square}`;
+                resultDiv.style.color = '#333';
+            }
+        }
+    </script>
+</body>
+</html> 
