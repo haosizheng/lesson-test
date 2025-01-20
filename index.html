@@ -32,6 +32,10 @@
         <input type="number" id="numberInput" placeholder="输入数字">
         <button onclick="calculateSquare()">计算平方</button>
     </div>
+    <div>
+        <input type="number" id="modInput" placeholder="输入数字计算余数">
+        <button onclick="calculateRemainder()">计算余数</button>
+    </div>
     <div id="result"></div>
 
     <script>
@@ -46,6 +50,21 @@
             } else {
                 const square = number * number;
                 resultDiv.textContent = `${number} 的平方是 ${square}`;
+                resultDiv.style.color = '#333';
+            }
+        }
+
+        function calculateRemainder() {
+            const input = document.getElementById('modInput');
+            const resultDiv = document.getElementById('result');
+            const number = parseFloat(input.value);
+            
+            if (isNaN(number)) {
+                resultDiv.textContent = '请输入有效的数字';
+                resultDiv.style.color = 'red';
+            } else {
+                const remainder = number % 2;
+                resultDiv.textContent = `${number} 除以 2 的余数是 ${remainder}`;
                 resultDiv.style.color = '#333';
             }
         }
